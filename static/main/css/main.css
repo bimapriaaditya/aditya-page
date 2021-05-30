@@ -1,0 +1,106 @@
+body{
+  overflow-x: hidden;
+} 
+nav.navbar.top {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  /* background: salmon; */
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  padding: 0;
+}
+nav.navbar.top > div{
+  height: 100%;
+}
+nav.navbar.top > div > .content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+nav.navbar.top > div > .content > div{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+nav.navbar.top > div > .content .brand, 
+nav.navbar.top > div > .content .item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+nav.navbar.top > div > .content .left .brand{
+  margin-right: 2rem;
+  height: 100%;
+  letter-spacing: 4px;
+}
+nav.navbar.top > div > .content .left .item{
+  height: 100%;
+  padding: 0 0.5rem;
+  color: var(--bs-secondary);
+  transition: 0.4s;
+  letter-spacing: 2px;
+}
+nav.navbar.top > div > .content .left .item:hover,
+nav.navbar.top > div > .content .left .item.active{
+  background: var(--primary-transparent);
+  color: var(--simple-active);
+  position: relative;
+}
+nav.navbar.top > div > .content .left .item:hover::after,
+nav.navbar.top > div > .content .left .item.active::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--primary-transparent);
+  transform: translateY(1px);
+}
+
+nav.navbar.top > div > .content .left .item#sidebar_toggle{
+  margin-right: 0.5rem;
+}
+nav.navbar.top > div > .content .left .item#sidebar_toggle:hover{
+  background: unset;
+  color: unset;
+}
+
+nav.navbar.top > div > .content .right .item#user img{
+  width: 40px;
+  object-position: center;
+  object-fit: cover;
+}
+nav.navbar.top > div > .content .right .item{
+  padding: 0 0.5rem;
+  position: relative;
+}
+nav.navbar.top > div > .content .right .item#notification::after{
+  content: attr(notif-count);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--bs-danger);
+  font-weight: bolder;
+  color: var(--bs-light);
+  padding: 0 5px;
+  font-size: 12px;
+  border-radius: 25px;
+  transform: translate(0, 75%);
+}
+nav.navbar.top > div > .content .right .item#user .text{
+  margin-left: 0.4rem;
+}
+nav.navbar.top > div > .content .right .item#user .text::after{
+  content: "\f078";
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  margin-left: 6px;
+}
+nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content{
+  width: 300px;
+}
