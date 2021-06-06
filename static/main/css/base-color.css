@@ -1,5 +1,5 @@
 :root {
-    --primary-transparent: rgba(0, 0, 0, 0.15);
+    --primary-transparent: rgba(0, 0, 0, 0.075);
     --simple-active: #000000;
     --border-color: #dee2e6;
     --shadow-md: 0 .5rem 1rem rgba(0,0,0,.15)!important;

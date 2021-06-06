@@ -23,7 +23,7 @@
           <div class="item" id="sidebar_toggle">
             <i class="fas fa-bars"></i>
           </div>
-          <div class="item active">
+          <!-- <div class="item active">
             Menu 1
           </div>
           <div class="item">
@@ -31,24 +31,42 @@
           </div>
           <div class="item">
             Menu 3
-          </div>
+          </div> -->
         </div>
         <!-- Action Nav e.g user button (see profile & logout), notification etc. -->
         <div class="right">
-          <div class="item" id="global_search">
+          <div class="item header-search">
             <i class="fas fa-search"></i>
+          </div>
+          <div class="header-search-menu">
+            <div class="content bg-white shadow">
+              <div class="searching">
+                <div class="input-group" role="group">
+                  <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                  </span>
+                  <input type="text" class="form-control plain" placeholder="Global Search On-Type">
+                </div>
+              </div>
+              <div class="container result">
+                <div class="status">
+                  <div class="loader"></div>
+                </div>
+                <div class="load-data"></div>
+              </div>
+            </div>
           </div>
           <div class="item dropdown" id="notification" data-count="6">
             <i class="far fa-bell" data-bs-toggle="dropdown" data-bs-auto-close="outside"></i>
             <div class="dropdown-menu dropdown-menu-end dropdown-rounded rounded-top-right-0">
               <div class="content">
                 <div class="list">
-                  <div class="item d-flex justify-content-between ">
+                  <div class="item d-flex justify-content-between">
                     <span>Message</span>
                     <i class="far fa-comments popup" data-count="4"></i>
                   </div>
                   <div class="item d-flex justify-content-between">
-                    <span>System Notification</span>
+                    <span>Notification</span>
                     <i class="far fa-bell popup" data-count="2"></i>
                   </div>
                 </div>
@@ -106,5 +124,6 @@
 
   <!-- Base Script -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="static/main/js/navbar-global-search.js"></script>
 </body>
 </html>
