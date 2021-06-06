@@ -1,11 +1,15 @@
 body{
   overflow-x: hidden;
+  background: #F4F6F9;
 } 
+.form-control.plain {
+  outline: 0;
+  box-shadow: none;
+}
 nav.navbar.top {
   width: 100%;
   height: 60px;
   background: #ffffff;
-  /* background: salmon; */
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-md);
   padding: 0;
@@ -23,17 +27,11 @@ nav.navbar.top > div > .content > div{
   display: flex;
   align-items: center;
 }
-nav.navbar.top > div > .content .brand, 
 nav.navbar.top > div > .content .item {
   display: flex;
   align-items: center;
   cursor: pointer;
   height: 100%;
-}
-nav.navbar.top > div > .content .left .brand{
-  margin-right: 2rem;
-  height: 100%;
-  letter-spacing: 4px;
 }
 nav.navbar.top > div > .content .left .item{
   height: 100%;
@@ -74,7 +72,7 @@ nav.navbar.top > div > .content .right .item#user > div > img{
   object-position: center;
   object-fit: cover;
 }
-nav.navbar.top > div > .content .right .item{
+nav.navbar.top > div > .content .right > .item{
   padding: 0 0.5rem;
   position: relative;
 }
@@ -146,7 +144,7 @@ nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content > .b
   transition: 0.4s;
   border-bottom: 1px solid var(--border-color);
 }
-nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content > .body .item .notif::after{
+.notif::after{
   content: attr(data-count);
   height: 100%;
   background: var(--bs-danger);
@@ -154,6 +152,21 @@ nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content > .b
   padding: 3px;
   color: var(--bs-light);
   border-radius: 3px;
+}
+.popup{
+  position: relative;
+}
+.popup::after{
+  content: attr(data-count);
+  background: var(--bs-danger);
+  color: var(--bs-light);
+  padding: 3px 6px;
+  border-radius: 25px;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
 }
 nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content > .body .item:hover{
   background: var(--primary-transparent);
@@ -165,4 +178,127 @@ nav.navbar.top > div > .content .right .item#user .dropdown-menu > .content > .f
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
   padding: 0.8rem 1rem;
+}
+.dropdown-menu.dropdown-rounded{
+  border-radius: 16px;
+}
+.dropdown-menu.dropdown-rounded.rounded-left-0{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-right-0{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-top-0{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-bottom-0{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-top-left-0{
+  border-top-left-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-top-right-0{
+  border-top-right-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-bottom-right-0{
+  border-bottom-right-radius: 0;
+}
+.dropdown-menu.dropdown-rounded.rounded-bottom-left-0{
+  border-bottom-left-radius: 0;
+}
+.dropdown-menu > .content .list > .item{
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid;
+  border-color: var(--border-color);
+  transition: 0.4s;
+}
+.dropdown-menu > .content .list > .item:last-child{
+  border-color: transparent;
+}
+.dropdown-menu > .content .list > .item:hover{
+  background: var(--primary-transparent);
+}
+.header-search-menu{
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+  transform: scale(0.915) translate(0, 0);
+  display: flex;
+  justify-content: center;
+}
+.header-search-menu.show{
+  opacity: 1;
+  visibility: visible;
+}
+.header-search-menu .content{
+  min-width: 40vw;
+  padding: 0.4rem 1rem;
+}
+@media(min-width: 1024px) {
+  .header-search-menu .content{
+    max-width: 80vw;
+  }
+}
+@media(max-width: 1024px) {
+  .header-search-menu .content{
+    max-width: 90vw;
+  }
+}
+.searching > .input-group > .form-control,
+.searching > .input-group > .input-group-text{
+ border-radius: 1.25rem;
+}
+
+.header-search-menu .content > .result{
+  margin-top: 1rem;
+}
+.loader {
+  position: relative;
+  width: 100%;
+  min-height: 8px;
+}
+
+.loader::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 8px;
+  background-color: rgba(11,11,11,.5);
+}
+
+.loader::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 30px;
+  min-height: 8px;
+  background: #05c46b;
+  animation: load 1.5s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 50%;
+    width: 50%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
 }
